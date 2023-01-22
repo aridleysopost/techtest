@@ -1,0 +1,17 @@
+# Managed by the SoPost-Github repo
+
+version: 2
+updates:
+  - package-ecosystem: mix
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "16:00"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: npm
+    directory: "/app"
+    schedule:
+      interval: daily
+      time: "16:00"
+    open-pull-requests-limit: 10
