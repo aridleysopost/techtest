@@ -7,6 +7,7 @@ import {
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import './App.css'
 import Root from './routes/root'
+import OrderList from './routes/OrderList'
 
 const defaultQueryFn: QueryFunction = async ({queryKey: [url]}) => {
   const {data} = await axios.get(url as string)
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+  },
+  {
+    path: '/orders',
+    element: <OrderList />,
   },
 ])
 

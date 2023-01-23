@@ -3,15 +3,15 @@
 version: 2
 updates:
   - package-ecosystem: mix
-    directory: "/"
+    directory: '/'
     schedule:
       interval: daily
-      time: "16:00"
+      time: '16:00'
     open-pull-requests-limit: 10
 
   - package-ecosystem: npm
-    directory: "/app"
+    directory: '/app'
     schedule:
       interval: daily
-      time: "16:00"
+      time: '16:00'
     open-pull-requests-limit: 10

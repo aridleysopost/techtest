@@ -1,1 +1,194 @@
-{"components":{"responses":{},"schemas":{"Test":{"description":"Test Schema","example":{"hello":"world"},"properties":{"hello":{"description":"Test Property (world)","type":"string","x-struct":null,"x-validate":null}},"required":["hello"],"title":"Test","type":"object","x-struct":"Elixir.TechTestWeb.Schemas.Test.Test","x-validate":null},"TestResponse":{"description":"Test Response Schema","example":{"data":{"hello":"world"}},"properties":{"data":{"$ref":"#/components/schemas/Test"}},"title":"TestResponse","type":"object","x-struct":"Elixir.TechTestWeb.Schemas.Test.TestResponse","x-validate":null}}},"info":{"title":"Warehouse Management System","version":"1.0"},"openapi":"3.0.0","paths":{"/api/test":{"get":{"callbacks":{},"operationId":"TechTestWeb.TestController.index","parameters":[],"responses":{"200":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/TestResponse"}}},"description":"Test"}},"summary":"Test","tags":["test"]}}},"security":[],"servers":[{"url":"http://localhost:4015","variables":{}}],"tags":[]}
+{
+  "components": {
+    "responses": {},
+    "schemas": {
+      "OrderParams": {
+        "description": "Order Schema",
+        "example": {"name": "Jeff Daveson", "quantity": 72},
+        "properties": {
+          "name": {
+            "description": "Name of the person ordering the donuts",
+            "type": "string",
+            "x-struct": null,
+            "x-validate": null
+          },
+          "quantity": {
+            "description": "The number of donuts ordered",
+            "type": "integer",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": ["name", "quantity"],
+        "title": "OrderParams",
+        "type": "object",
+        "x-struct": "Elixir.TechTestWeb.Schemas.Order.OrderParams",
+        "x-validate": null
+      },
+      "OrderResponse": {
+        "description": "Order response schema",
+        "example": {"data": {}},
+        "properties": {"data": {"x-struct": null, "x-validate": null}},
+        "title": "OrderResponse",
+        "type": "object",
+        "x-struct": "Elixir.TechTestWeb.Schemas.Order.OrderResponse",
+        "x-validate": null
+      },
+      "OrdersResponse": {
+        "description": "Test Response Schema",
+        "example": {"data": {"orders": [{"name": "Jeff", "quantity": 5}]}},
+        "properties": {
+          "data": {
+            "properties": {
+              "orders": {
+                "items": {
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "x-struct": null,
+                      "x-validate": null
+                    },
+                    "quantity": {
+                      "type": "integer",
+                      "x-struct": null,
+                      "x-validate": null
+                    }
+                  },
+                  "type": "object",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "type": "array",
+                "x-struct": null,
+                "x-validate": null
+              }
+            },
+            "type": "object",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "title": "OrdersResponse",
+        "type": "object",
+        "x-struct": "Elixir.TechTestWeb.Schemas.Order.OrdersResponse",
+        "x-validate": null
+      },
+      "Test": {
+        "description": "Test Schema",
+        "example": {"hello": "world"},
+        "properties": {
+          "hello": {
+            "description": "Test Property (world)",
+            "type": "string",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": ["hello"],
+        "title": "Test",
+        "type": "object",
+        "x-struct": "Elixir.TechTestWeb.Schemas.Test.Test",
+        "x-validate": null
+      },
+      "TestResponse": {
+        "description": "Test Response Schema",
+        "example": {"data": {"hello": "world"}},
+        "properties": {"data": {"$ref": "#/components/schemas/Test"}},
+        "title": "TestResponse",
+        "type": "object",
+        "x-struct": "Elixir.TechTestWeb.Schemas.Test.TestResponse",
+        "x-validate": null
+      }
+    }
+  },
+  "info": {"title": "Donut Ordering Form", "version": "1.0"},
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/order": {
+      "post": {
+        "callbacks": {},
+        "operationId": "TechTestWeb.OrderController.index",
+        "parameters": [
+          {
+            "description": "Name of orderer",
+            "example": "Oswin McDonald",
+            "in": "body",
+            "name": "name",
+            "required": false,
+            "schema": {"type": "string", "x-struct": null, "x-validate": null}
+          },
+          {
+            "description": "Quantity Ordered",
+            "example": 3,
+            "in": "body",
+            "name": "quantity",
+            "required": false,
+            "schema": {"type": "integer", "x-struct": null, "x-validate": null}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/OrderParams"}
+            }
+          },
+          "description": "Order params",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/OrderResponse"}
+              }
+            },
+            "description": "Order"
+          }
+        },
+        "summary": "Order a number of donuts",
+        "tags": ["order"]
+      }
+    },
+    "/api/orders": {
+      "get": {
+        "callbacks": {},
+        "operationId": "TechTestWeb.OrderController.orders",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/OrdersResponse"}
+              }
+            },
+            "description": "Order"
+          }
+        },
+        "summary": "Show the list of currently ordered donuts",
+        "tags": ["order"]
+      }
+    },
+    "/api/test": {
+      "get": {
+        "callbacks": {},
+        "operationId": "TechTestWeb.TestController.index",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/TestResponse"}
+              }
+            },
+            "description": "Test"
+          }
+        },
+        "summary": "Test",
+        "tags": ["test"]
+      }
+    }
+  },
+  "security": [],
+  "servers": [{"url": "http://localhost:4015", "variables": {}}],
+  "tags": []
+}

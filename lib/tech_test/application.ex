@@ -13,9 +13,10 @@ defmodule TechTest.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: TechTest.PubSub},
       # Start the Endpoint (http/https)
-      TechTestWeb.Endpoint
+      TechTestWeb.Endpoint,
       # Start a worker by calling: TechTest.Worker.start_link(arg)
       # {TechTest.Worker, arg}
+      TechTest.DonutServer
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

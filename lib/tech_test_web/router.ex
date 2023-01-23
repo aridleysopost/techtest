@@ -16,6 +16,8 @@ defmodule TechTestWeb.Router do
     pipe_through :api
 
     get "/test", TestController, :index
+    post "/order", OrderController, :index
+    get "/orders", OrderController, :orders
   end
 
   scope "/", TechTestWeb do

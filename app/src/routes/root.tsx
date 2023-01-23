@@ -1,13 +1,11 @@
-import {useQuery} from '../api'
+import {DonutOrderForm} from '../components/DonutOrderForm'
 
 export default function Root() {
-  const {data, isLoading} = useQuery('/api/test')
-
   return (
     <div className="App">
       <h1>Donut Orderer</h1>
       <div className="card">
-        <span>Hello {isLoading ? '...' : data?.data?.hello}</span>
+        <DonutOrderForm />
       </div>
     </div>
   )
