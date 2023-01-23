@@ -40,11 +40,11 @@ export interface components {
      * OrderResponse
      * @description Order response schema
      * @example {
-     *   "data": {}
+     *   "success": true
      * }
      */
     OrderResponse: {
-      data?: Record<string, never>
+      success?: boolean
     }
     /**
      * OrdersResponse

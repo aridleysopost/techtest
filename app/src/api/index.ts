@@ -93,7 +93,7 @@ export const useMutation = <P extends MutationPaths>(
   >,
 ) => {
   return useReactMutation<MutationResponse<P>, unknown, MutationParameters<P>>(
-    params => axios.post(formatMutationPath(path, params), params),
+    params => axios.post(formatMutationPath(path, params), params).then(({data}) => data),
     options,
   )
 }

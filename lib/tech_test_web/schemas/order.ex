@@ -31,10 +31,10 @@ defmodule TechTestWeb.Schemas.Order do
       description: "Order response schema",
       type: :object,
       properties: %{
-        data: %Schema{}
+        success: %Schema{type: :boolean}
       },
       example: %{
-        "data" => %{}
+        "success" => true
       }
     })
   end

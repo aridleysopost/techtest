@@ -27,8 +27,10 @@
       },
       "OrderResponse": {
         "description": "Order response schema",
-        "example": {"data": {}},
-        "properties": {"data": {"x-struct": null, "x-validate": null}},
+        "example": {"success": true},
+        "properties": {
+          "success": {"type": "boolean", "x-struct": null, "x-validate": null}
+        },
         "title": "OrderResponse",
         "type": "object",
         "x-struct": "Elixir.TechTestWeb.Schemas.Order.OrderResponse",

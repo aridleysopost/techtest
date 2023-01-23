@@ -9,7 +9,7 @@ type OrderTableProps = {
 }
 
 export const OrderTable: React.FC<OrderTableProps> = ({orders}) => {
-  console.log(orders)
+
   return (
     <table>
       <thead>
