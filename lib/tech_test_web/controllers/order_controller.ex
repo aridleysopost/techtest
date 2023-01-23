@@ -31,7 +31,7 @@ defmodule TechTestWeb.OrderController do
 
   def index(conn, %{"name" => name, "quantity" => quantity}) do
     TechTest.DonutServer.add_order(%Order{name: name, quantity: quantity})
-    json(conn, %{data: %{hello: "world"}})
+    json(conn, %{success: true})
   end
 
   operation(:orders,
