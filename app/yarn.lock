@@ -386,10 +386,10 @@
     "@swc/core-win32-ia32-msvc" "1.3.24"
     "@swc/core-win32-x64-msvc" "1.3.24"
 
-"@swc/plugin-styled-components@^1.5.36":
-  version "1.5.36"
-  resolved "https://registry.yarnpkg.com/@swc/plugin-styled-components/-/plugin-styled-components-1.5.36.tgz#e735eb9042d864c13af364ef3854449740b984dc"
-  integrity sha512-kvgEKBNWb1v6GI0gL7xlyFy671Jva7J2l8Adm8tOoRSHnH0Xwp4ITpkshKiMDnF1LfTBFsC2XRqqUgLY2TrXOA==
+"@swc/plugin-styled-components@^1.5.37":
+  version "1.5.37"
+  resolved "https://registry.yarnpkg.com/@swc/plugin-styled-components/-/plugin-styled-components-1.5.37.tgz#5be4aa410d01295fef08ebc288d973be4ad08ff6"
+  integrity sha512-I/EAwsHHljmhDm6I5qi3qK33W2hp4yVRMrY74Rt+Ao9Q1ltZyGUwy0Tc5q/QV3fXxQk4afalqknWaMAqXgf9lw==
 
 "@tanstack/query-core@4.20.4":
   version "4.20.4"
