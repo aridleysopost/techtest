@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@swc/plugin-styled-components": "^1.5.36",
-    "@tanstack/react-query": "^4.20.4",
+    "@tanstack/react-query": "^4.29.1",
     "axios": "^1.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
